@@ -46,9 +46,11 @@ async def run_pipeline_phase_2(bookmarks_by_category, ollama_host, ollama_model)
                 For the new grouped categories:
                     - Take care not to forget any input categories.
                     - Always use the concisest category name for the new name.
+                    - Be short and concise (2 words maximum, preferably 1 word)
                     - Do not use irrelevant numbers.
                     - Use proper Capitalization and spacing
                     - Avoid special characters or numbers unless necessary for clarity.
+                    - Use & instead of and, and other shortforms.
 
                 Generate a JSON object that represents these groupings, where each key is a category name and value is an array of similar categories.
                     { [category: string]: string[] }
@@ -70,7 +72,7 @@ async def run_pipeline_phase_2(bookmarks_by_category, ollama_host, ollama_model)
         model=ollama_model,
         url=f"{ollama_host}/api/generate",
         generation_kwargs={
-            "num_predict": 1200,
+            "num_predict": 1500,
             "temperature": 0.75,
         },
     )

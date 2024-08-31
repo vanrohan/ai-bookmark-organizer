@@ -200,14 +200,14 @@ async def run_pipeline_phase_1(url, user_title, chrome_host, ollama_host, ollama
                 %s
                Based on this information, answer the following questions:
                 1. What is a good title for this URL?
-                    - Be short and concise (2 words maximum)
+                    - Be short and concise (2 words maximum, preferably 1 word)
                     - Do not use vague words like "Home", "Page" or "Startseite".
                     - Always start the title with a ref to the domain, followed by a couple of relevant words regarding the service provided.
                 2. In what main category would you categorize this website's service?
                     - Choose a simple generic high-level content category from the following list:
                         -   "News", "Social Media", "E-commerce", "Marketplace", "Education", "Finance", "Health", "Travel", "Entertainment", "Technology", "Science", "Art", "Sports", "Government", "Nonprofit", "Real Estate", "Automotive", "Jobs", "Pets", "Agriculture", "Music", "Fashion", "Food & Drink", "Business", "Weather", "Architecture", "Design", "Marketing", "Sales", "Legal", "Insurance", "Environment", "Community", "Tools", "Games", "Communication", "Other"
                 3. Give a short concise summary description of this website's service.
-                    - Keep it short and concise (2-3 sentences max)
+                    - Keep it short and concise (2-4 sentences max)
 
                 For each field:
                     - Do not use irrelevant numbers.

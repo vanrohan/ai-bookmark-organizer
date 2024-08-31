@@ -173,7 +173,7 @@ if __name__ == "__main__":
         logger.info(f"Re-processing bookmarks_by_category['Dead'] - Total: {len(bookmarks_by_category['Dead'])}")
         dead_bookmarks_found = []
         for idx, bookmark in enumerate(bookmarks_by_category["Dead"]):
-            logger.info(f"Checking bookmark {idx}/{len(bookmarks_by_category['Dead'])}")
+            logger.info(f"Checking bookmark {bookmark.url} {idx}/{len(bookmarks_by_category['Dead'])}")
             try:
                 response = asyncio.run(run_pipeline_phase_1(bookmark.url, bookmark.title, chrome_host, ollama_host, ollama_model))
                 time.sleep(1)  # Add a delay to avoid overwhelming the webservers :-)
@@ -206,7 +206,7 @@ if __name__ == "__main__":
                 continue
             else:
                 logger.debug(f"Already processed URL - Skipping {bookmark.url}")
-            logger.info(f"Checking bookmark {idx}/{len(input_bookmarks)}")
+            logger.info(f"Checking bookmark {bookmark.url} {idx}/{len(input_bookmarks)}")
             # if idx > 125: # If you want to test with only first few bookmarks
             #     break
             try:

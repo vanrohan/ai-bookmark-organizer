@@ -48,11 +48,12 @@ async def run_pipeline_phase_3(original_predictions, ollama_host, ollama_model):
                 Based on this information, answer the following questions:
                 1. What is a good Sub-Category for this website?
                     - IMPORTANT - This must not be similar to the main category.
-                    - Be short and concise (2 words maximum)
+                    - Be short and concise (2 words maximum, preferably 1 word)
                     - Do not use vague words like "Home", "Page" or "Startseite".
                     - Do not use irrelevant numbers.
                     - Use proper Capitalization
                     - Avoid numbers unless necessary for clarity.
+                    - Use & instead of and, and other shortforms.
 
                 Output your answers as a JSON object with the following structure:
                 {
@@ -68,7 +69,7 @@ async def run_pipeline_phase_3(original_predictions, ollama_host, ollama_model):
         model=ollama_model,
         url=f"{ollama_host}/api/generate",
         generation_kwargs={
-            "num_predict": 250,
+            "num_predict": 550,
             "temperature": 0.75,
         },
     )
