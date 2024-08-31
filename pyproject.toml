@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "ai-bookmark-organizer"
+version = "0.1.0"
+description = ""
+authors = ["rvdw <rohan@vanderwalt.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.2"
+beautifulsoup4 = "^4.12.3"
+haystack-ai = "^2.2.4"
+ollama-haystack = "^0.0.7"
+playwright = "^1.45.0"
+python-dotenv = "^1.0.1"
+lxml = {extras = ["html-clean"], version = "^5.2.2"}
+newspaper3k = "^0.2.8"
+mypy = "^1.11.2"
+black = "^24.8.0"
+ruff = "^0.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.mypy.overrides]]
+module = ["newspaper","haystack","haystack.*", "haystack_integrations.*"]
+ignore_missing_imports = true
+
+
+[tool.black]
+line-length = 139

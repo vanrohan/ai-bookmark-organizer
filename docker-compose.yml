@@ -1,0 +1,15 @@
+services:
+  headlessubuntu:
+    image: "vanrohan/headless-ubuntu-g3:latest-chromium"
+    container_name: headless-ubuntu
+    restart: unless-stopped
+    volumes:
+      - "/var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro"
+      - "chromedata:/home/headless/.config/chromium/Default"
+    ports:
+      - "25901:5901"
+      - "26901:6901"
+      - "0.0.0.0:9223:9223" # CDP
+
+volumes:
+  chromedata:
